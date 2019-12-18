@@ -30,9 +30,18 @@ sudo mkdir /var/log/bucardo
 #listen_addresses = 'localhost'         # what IP address(es) to listen on;
 # to  listen_addresses = '*'
 sudo vim /etc/postgresql/10/main/postgresql.conf
+# Database administrative login by Unix domain socket
+#local   all             postgres                                peer
+
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+
+# "local" is for Unix domain socket connections only
+local   all             all                                     peer
+# IPv4 local connections:
+#host    all             all             127.0.0.1/32            md5
 # change to
 # "local" is for Unix domain socket connections only
-local   all             all                                     trust
+#local   all             all                                     trust
 # IPv4 local connections:
 host    all             all             0.0.0.0/0               trust
 sudo vim /etc/postgresql/10/main/pg_hba.conf
