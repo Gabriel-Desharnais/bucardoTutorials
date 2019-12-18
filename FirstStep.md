@@ -27,7 +27,9 @@ sudo mkdir /var/log/bucardo
 # Modification to access file
 
 ``` bash
-sudo vim /etc/postgresql/10/main/postgresql.conf # Modify to listen_addresses = '*'
+#listen_addresses = 'localhost'         # what IP address(es) to listen on;
+# to  listen_addresses = '*'
+sudo vim /etc/postgresql/10/main/postgresql.conf
 # change to
 # "local" is for Unix domain socket connections only
 local   all             all                                     trust
