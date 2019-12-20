@@ -111,14 +111,14 @@ docker run  --name "pgadmin4" -e "PGADMIN_DEFAULT_EMAIL=gab@gab.gab" -e "PGADMIN
 - fill the og bd with data
 
 ``` bash
-sudo -u bucardo bucardo add database dbtest1 dbname=test1
-sudo -u bucardo bucardo add database dbtest2 dbname=test2
-sudo -u bucardo bucardo add all tables db=dbtest1 --herd=dbtest1_dbtest2
-sudo -u bucardo bucardo add all tables db=dbtest2 --herd=dbtest2_dbtest1
-sudo -u bucardo bucardo add sync sync_dbpmis1 relgroup=dbtest1_dbtest2 dbs=dbtest1,dbtest2 onetimecopy=2
-sudo -u bucardo bucardo add sync sync_dbpmis2 relgroup=dbtest2_dbtest1 dbs=dbtest2,dbtest1
-sudo bucardo start
-sudo -u bucardo bucardo status
+bucardo add database dbtest1 dbname=test1
+bucardo add database dbtest2 dbname=test2
+bucardo add all tables db=dbtest1 --herd=dbtest1_dbtest2
+bucardo add all tables db=dbtest2 --herd=dbtest2_dbtest1
+bucardo add sync sync_dbpmis1 relgroup=dbtest1_dbtest2 dbs=dbtest1,dbtest2 onetimecopy=2
+bucardo add sync sync_dbpmis2 relgroup=dbtest2_dbtest1 dbs=dbtest2,dbtest1
+bucardo start
+bucardo status
 ```
 
 - omg it's working
